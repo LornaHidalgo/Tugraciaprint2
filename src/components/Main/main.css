@@ -1,0 +1,253 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* p {
+  margin: 0;
+  color: #012e67;
+  font-family: 'Didact Gothic', sans-serif;
+  text-shadow: 2px 2px 2px #ffcccc;
+  font-size:100%;
+
+}
+.contenedor{
+  width:80%;
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.btn {
+  padding: 0.5rem 1rem;
+  background-color: white;
+  border: solid 1px #FF9999	;
+  border-radius: 10px;
+  color: #012e67;
+}
+
+.card__product {
+  margin: 0.5rem 1rem 1rem 1rem;
+  padding: 0.5rem 0rem 0.75rem 0rem;
+  background-color: #FFCCCC	;
+  width: 16rem;
+  height: auto;
+}
+
+.card__product .card_product--title_principal {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.card__product .card_product--title_principal .card__product--title {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.card__product .card_product--title_principal .card__product--desc {
+  font-weight: 200;
+  text-align: center;
+  padding: 0rem 0rem 0.25rem 0rem;
+}
+
+.productos .card__product .card__product--img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+}
+
+
+.productos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.productos .card__product .card__product--img img {/*jdf*/
+  height: auto;
+  width: 100%;
+  border-radius: 6px;
+  
+}
+
+.productos .card__product .card__product--cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 0.5rem;
+}
+
+.productos .card__product .card__product--cta .price {
+  color: #012e67;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.card__product--btn_qty {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 6rem;
+  font-size: 1.3rem;
+  background-color: white;
+  border: solid 1px 	#FF9999;
+  border-radius: 10px;
+  margin: 0.5rem 0rem 0.5rem 0rem;
+}
+
+.card__product--btn_qty button {
+  padding: 0.25rem;
+  font-size: 1.5rem;
+  color: #012e67;
+  font-weight: bold;
+  background-color: transparent;
+  border: none;
+}
+
+.card__product--btn_more {
+  margin: 0 auto;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.card__detail {
+  padding: 0.5rem 0rem 0.75rem 0rem;
+  background-color: #FFCCCC;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 1rem auto;
+  
+  
+}
+
+.card__detail--info {
+  display: flex;
+  width: 30%;
+  flex-direction: column;
+  border: solid 0.5px white;
+  border-radius: 10px;
+  margin: 0.5rem;
+  justify-content: space-around;
+}
+
+.card__detail .card_product--title_principal {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.card__detail .card_product--title_principal .card__detail--title {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.card__detail .card_product--title_principal .card__detail--desc {
+  font-weight: 200;
+  text-align: center;
+  padding: 0rem 0rem 0.25rem 0rem;
+}
+
+.card__detail--img {
+  display: flex;
+ justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+}
+
+.card__detail--img img {
+ 
+  border-radius: 6px;
+  width: 100%;
+  height: auto;
+}
+
+.card__detail--cta {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 0.5rem;
+}
+
+.card__detail--cta .price {
+  color: #012e67;
+  font-size: 1.5rem;
+  text-align: center
+}
+
+.card__detail--btn_qty {
+  margin: 0.5rem auto;
+}
+
+.card__detail--btn_qty button {
+  padding: 0.25rem;
+  font-size: 1.5rem;
+  color:#012e67;
+  font-weight: bold;
+  background-color: transparent;
+  border: none;
+}
+
+.card__detail--btn_add {
+  margin: 0 auto;
+  display: flex;
+}
+
+.card__detail--btn_finish {
+  color: white;
+  padding: 0.5rem 1rem;
+  background-color:#FF9999;
+  border: solid 1px#FF6666;
+  border-radius: 10px;
+  display: flex;
+  margin: 0 auto;
+}
+
+.main {
+  padding: 1rem 0;
+  min-height: 68vh;
+}
+
+.bannerHome{
+  width: 100%;
+  height: auto;
+  opacity: 0.8;
+}
+.button-primary {
+  background-color: #f7b035;;
+  border: none;
+  font-family:  'Pacifico', cursive;
+  font-weight: 700;
+  font-size: 2rem;
+  margin: 20px auto;
+  width: 30%;
+  height: 50px;
+  cursor: pointer;
+}
+@media screen and (max-width:800px) {
+
+  .main{
+    width: 100%;
+  }aside{
+    width:100%;
+  }
+  .button-primary{
+    width: 7rem;
+    height: 2.1rem;
+    font-size: 70%;
+  }
+}

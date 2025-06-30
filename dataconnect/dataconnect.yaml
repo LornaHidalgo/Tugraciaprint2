@@ -1,0 +1,12 @@
+specVersion: "v1"
+serviceId: "hitakustore-hidalgo-main"
+location: "us-central1"
+schema:
+  source: "./schema"
+  datasource:
+    postgresql:
+      database: "fdcdb"
+      cloudSql:
+        instanceId: "hitakustore-hidalgo-main-fdc"
+      # schemaValidation: "COMPATIBLE"
+connectorDirs: ["./connector"]
