@@ -1,40 +1,58 @@
 .footer {
     background-color: white;
     width: 100%;
-    height: fit-content; }
-    .footer .footer__logo {
-      padding: 0.5rem 0rem 0.3rem 0rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center; }
-      .footer .footer__logo img {
-        height: 60px;
-        text-align: center; }
-    .footer .footer__redes {
-      text-align: center; }
-      .footer .footer__redes a {
-        padding: 0rem 0.2rem; }
-        .footer .footer__redes a i:hover {
-          transform: scale(1.2);
-          transition: all 1s; }
+    height: fit-content;
+}
+
+.footer .footer__logo {
+    padding: 0.5rem 0rem 0.3rem 0rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer .footer__logo img {
+    height: 60px;
+    text-align: center;
+}
+
+.footer .footer__redes {
+    text-align: center;
+}
+
+.footer .footer__redes a {
+    padding: 0rem 0.2rem;
+}
+
+.footer .footer__redes a i:hover {
+    transform: scale(1.2);
+    transition: all 1s;
+}
+
+.footer .footer__derechos-lugar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer .footer__derechos-lugar p {
+    padding: 0rem 3rem 1rem 3rem;
+    font-size: 1rem;
+}
+
+/* Media query específica para el footer en pantallas pequeñas */
+@media (max-width: 576px) {
     .footer .footer__derechos-lugar {
-      display: flex;
-      justify-content: space-between; }
-      .footer .footer__derechos-lugar p {
-        padding: 0rem 3rem 1rem 3rem;
-        font-size: 1rem; }
-    @media (max-width: 576px) {
-      .footer .footer__derechos-lugar {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-top: 1rem; }
-        .footer .footer__derechos-lugar p {
-          padding: 0rem 0rem 0rem 0rem;
-          font-size: 1rem; } 
-        .btn-wsp{
-           position:fixed;
-          width: 55px;
-        }}
+        margin-top: 1rem;
+    }
+
+    .footer .footer__derechos-lugar p {
+        padding: 0rem 0rem 0rem 0rem;
+        font-size: 1rem;
+    }
+}
+

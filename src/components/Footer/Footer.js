@@ -34,7 +34,9 @@ export const Footer = () => {
                 <p><i className="fas fa-map-marker-alt"></i> Chile</p>
                 <p>TuGraciaPrint® 2025</p>
             </div>
+            
 
         </div>
+        
     );
 } 

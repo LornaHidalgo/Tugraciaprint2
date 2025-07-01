@@ -9,7 +9,12 @@ import { WishIcon } from "./WishIcon";
 export const NavBar = () => {
   
   return (
+    
+    
     <div>
+      <Container className="info" >
+        <h1>hola</h1>
+      </Container>
       <Navbar bg="light" expand="lg" className="navbar-bg">
         <Container>
           <Link to="/">

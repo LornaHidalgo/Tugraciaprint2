@@ -1,0 +1,40 @@
+/* --- BOTÓN FLOTANTE DE WHATSAPP --- */
+
+/* Reglas base para todas las pantallas (escritorio por defecto) */
+.whatsapp_float {
+    position: fixed; /* Mantiene el botón fijo en la ventana */
+    width: 80px; /* Tamaño del botón para escritorio */
+    height: 80px;
+    bottom: 40px; /* 40px desde el borde inferior */
+    right: 40px; /* ¡IMPORTANTE! 40px desde el borde derecho, no left */
+    background-color: #25d366; /* Verde de WhatsApp */
+    color: #FFF; /* Color del icono (cambiado a blanco para mejor contraste) */
+    border-radius: 50%; /* Forma perfectamente circular */
+    text-align: center;
+    font-size: 60px; /* Tamaño del icono */
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4); /* Sombra estándar */
+    z-index: 9999; /* Valor muy alto para asegurar que esté encima de casi todo */
+    display: flex; /* Para centrar el icono fácilmente */
+    justify-content: center; /* Centra el icono horizontalmente */
+    align-items: center; /* Centra el icono verticalmente */
+    text-decoration: none; /* Quita el subrayado del enlace */
+}
+
+/* El margin-top en whatsapp-icon no es necesario con display:flex en el padre */
+.whatsapp-icon {
+    /* No se necesita ninguna regla aquí si usas flexbox en .whatsapp_float */
+}
+
+/* Reglas específicas para dispositivos móviles */
+@media screen and (max-width: 767px) {
+    .whatsapp_float {
+        width: 40px; /* Más pequeño en móviles */
+        height: 40px;
+        bottom: 20px; /* Más cerca del borde inferior */
+        right: 10px; /* Más cerca del borde derecho */
+        font-size: 22px; /* Icono más pequeño en móviles */
+    }
+    .whatsapp-icon {
+        /* Tampoco se necesita regla aquí para móviles si usas flexbox en el padre */
+    }
+}

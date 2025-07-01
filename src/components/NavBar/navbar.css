@@ -1,70 +1,134 @@
+/*
+ * Selector universal: Aplica a todos los elementos.
+ * Quita el subrayado predeterminado de todos los enlaces en la página.
+ */
 * a {
   text-decoration: none;
 }
 
-
-
+/*
+ * Estilos para elementos con la clase 'info'.
+ * Este es el bloque que modifica el fondo, color de letra y tamaño de fuente,
+ * similar a lo que pediste para "hola".
+ */
+.info {
+  background-color: rgb(73, 0, 128); /* Establece el color de fondo a morado oscuro. */
+  color: white; /* Define el color del texto a blanco. */
+  
+  padding: 2px; /* Añade un pequeño relleno de 2 píxeles alrededor del contenido. */
+  text-align: center; /* Centra horizontalmente el texto dentro del elemento. */
+}
+.info h1{
+  font-size: 1rem; /* Ajusta el tamaño de la letra a un valor mediano/pequeño (0.5 veces el tamaño de la fuente raíz). */
+}
+/*
+ * Estilos para el icono de carrito de compras (ej. Font Awesome).
+ * Combina las clases 'fas' (Font Awesome Solid) y 'fa-shopping-cart'.
+ */
 .fas.fa-shopping-cart {
-  display: flex;
-  align-items: center;
-  color: #012e67;
-  text-decoration: none;
-  margin: 0rem 1rem;
+  display: flex; /* Convierte el elemento en un contenedor flexible. */
+  align-items: center; /* Alinea el icono verticalmente al centro. */
+  color: #012e67; /* Define el color del icono (azul oscuro). */
+  text-decoration: none; /* Asegura que el icono no tenga subrayado. */
+  margin: 0rem 1rem; /* Establece un margen de 0 en la parte superior/inferior y 1rem a la izquierda/derecha. */
 }
+
+/*
+ * Estilo al pasar el cursor sobre el icono de carrito.
+ * Cambia el color del icono cuando el usuario lo "sobrevuela" con el mouse.
+ */
 .fas.fa-shopping-cart:hover {
-  color: #00ccff;
+  color: #00ccff; /* Cambia el color del icono a azul claro al pasar el ratón. */
 }
 
+/*
+ * Estilos para el contenedor del widget del carrito (posiblemente incluye el icono y un contador).
+ */
 .cartWidget {
-  display: flex;
-  color: #012e67;
-  font-size: 1.2rem;
+  display: flex; /* Convierte el elemento en un contenedor flexible. */
+  color: #012e67; /* Define el color del texto/elementos dentro del widget (azul oscuro). */
+  font-size: 1.2rem; /* Establece el tamaño de la fuente del texto dentro del widget. */
 }
 
-.alig-right {
-  display: flex;
-  align-items: center;
+/*
+ * Estilos para elementos que deben alinearse a la derecha.
+ * 'alig-right' es probablemente un error tipográfico y debería ser 'align-right'.
+ */
+.alig-right { /* Es probable que deba ser .align-right */
+  display: flex; /* Convierte el elemento en un contenedor flexible. */
+  align-items: center; /* Alinea los elementos hijos verticalmente al centro. */
 }
 
-
+/*
+ * Estilos para la barra de navegación (Navbar) con fondo específico.
+ */
 .navbar-bg {
-  background-color: white !important;
+  background-color: white !important; /* Establece el fondo de la barra de navegación a blanco. El '!important' fuerza la prioridad sobre otras reglas. */
 }
 
+/*
+ * Estilos para los enlaces dentro de la lista de navegación (navbar-nav).
+ */
 .navbar-nav a {
-  color: #012e67;
-  margin: 0.2rem 0.5rem;
+  color: #012e67; /* Define el color de los enlaces a azul oscuro. */
+  margin: 0.2rem 0.5rem; /* Establece un margen pequeño alrededor de cada enlace. */
 }
 
+/*
+ * Estilo al pasar el cursor sobre los enlaces de la barra de navegación.
+ */
 .navbar-nav a:hover {
-  color: #00ccff;
+  color: #00ccff; /* Cambia el color de los enlaces a azul claro al pasar el ratón. */
 }
 
+/*
+ * Estilos para el logo de navegación.
+ */
 .logo-nav {
-  height: 4.5rem;
-}
-.nav-link {
-  padding: 0;
-  color: #012e67;
+  height: 4.5rem; /* Establece la altura del logo. */
 }
 
+/*
+ * Estilos para los enlaces de navegación generales.
+ * Probablemente para los elementos `<a>` que tienen la clase `nav-link`.
+ */
+.nav-link {
+  padding: 0; /* Elimina el relleno predeterminado de los enlaces de navegación. */
+  color: #012e67; /* Define el color del texto del enlace a azul oscuro. */
+}
+
+/*
+ * Reglas CSS que se aplican solo en pantallas con un ancho mínimo de 992 píxeles (escritorio y pantallas grandes).
+ */
 @media (min-width: 992px) {
+  /*
+   * Alinea los elementos dentro del colapso de la barra de navegación.
+   * Esto es común para separar el logo a un lado y los ítems de navegación al otro.
+   */
   .navbar-expand-lg .navbar-collapse {
-    justify-content: space-between;
+    justify-content: space-between; /* Distribuye el espacio entre los elementos, enviando uno a la izquierda y otro a la derecha. */
   }
 }
 
-
-.carousel-control-prev,
-.carousel-control-next,
-.carousel-indicators {
-  display: none;
+/*
+ * Oculta los controles de navegación (flechas) y los indicadores (puntos/guiones) de los carruseles.
+ */
+.carousel-control-prev, /* Flecha de "anterior" en el carrusel */
+.carousel-control-next, /* Flecha de "siguiente" en el carrusel */
+.carousel-indicators { /* Puntos o líneas que indican la diapositiva actual */
+  display: none; /* Hace que estos elementos no se muestren. */
 }
 
+/*
+ * Estilos para los párrafos dentro de las leyendas de carrusel.
+ */
 .carousel-caption p {
-  font-size: 1.5rem;
+  font-size: 1.5rem; /* Establece el tamaño de la fuente para los párrafos de la leyenda. */
 }
 
+/*
+ * Estilos para los encabezados H3 dentro de las leyendas de carrusel.
+ */
 .carousel-caption h3 {
-  font-size: 3rem;
+  font-size: 3rem; /* Establece el tamaño de la fuente para los encabezados H3 de la leyenda. */
 }
