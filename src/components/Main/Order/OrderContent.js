@@ -12,8 +12,9 @@ import { useHistory } from "react-router-dom";
 const API_BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:4000";
 
 export const OrderContent = () => {
-  const [orderConfirmed, setOrderConfirmed] = useState(false);
-  const [whatsappLink, setWhatsappLink] = useState("");
+  // Eliminamos orderConfirmed ya que la redirección será directa
+  // const [orderConfirmed, setOrderConfirmed] = useState(false);
+  const [whatsappLink, setWhatsappLink] = useState(""); // Aún necesitamos esto para generar el link
 
   const { cart, getTotal, clearCart } = useContext(CartContext);
   const [buyer, setBuyer] = useState({
@@ -120,10 +121,14 @@ export const OrderContent = () => {
 
       const generatedWhatsappURL = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
 
-      console.log("URL de WhatsApp generada:", generatedWhatsappURL);
-      setWhatsappLink(generatedWhatsappURL);
-      setOrderConfirmed(true);
-      clearCart(); // Limpia el carrito después de confirmar la orden
+      // Abre WhatsApp directamente
+      window.open(generatedWhatsappURL, "_blank");
+
+      // Limpia el carrito
+      clearCart();
+
+      // Redirige a una página de confirmación o a la página de inicio
+      history.push("/"); // Puedes cambiar esto a "/order-success" o similar si tienes una página dedicada
 
     } catch (error) {
       console.error("Error al finalizar la orden:", error);
@@ -209,46 +214,18 @@ export const OrderContent = () => {
           </div>
         )}
 
-        {!orderConfirmed && (
-          <Button
-            variant="primary"
-            type="submit"
-            disabled={loading || cart.length === 0}
-            className="mt-3"
-          >
-            {loading ? "Enviando..." : "Confirmar Orden"}
-          </Button>
-        )}
+        {/* El botón de confirmar orden ahora maneja todo el flujo */}
+        <Button
+          variant="primary"
+          type="submit"
+          disabled={loading || cart.length === 0}
+          className="mt-3"
+        >
+          {loading ? "Enviando..." : "Confirmar Orden y Chatear por WhatsApp"}
+        </Button>
 
-        {orderConfirmed && (
-          <div className="order-success-message mt-4">
-            <h3>¡Orden Confirmada con Éxito!</h3>
-            <p>Hemos recibido los detalles de tu orden y te hemos enviado un correo de confirmación.</p>
-            <p>Para finalizar tu compra y coordinar la entrega, por favor, haz clic en el siguiente botón para chatear con nosotros por WhatsApp:</p>
-
-
-            <Button
-              variant="success"
-              className="mt-3 whatsapp-button"
-              onClick={() => {
-                window.open(whatsappLink, "_blank");
-                // Ya se limpia el carrito en el try block, así que lo moví allí.
-                // history.push({
-                //   pathname: "/order-confirmation",
-                //   state: { whatsappLink: whatsappLink } // Pasa el link de WhatsApp a la página de confirmación
-                // });
-                // Redirige después de que el usuario haga clic en WhatsApp
-                history.push("/"); // O a una página de agradecimiento adecuada
-              }}
-            >
-              <i className="fab fa-whatsapp me-2"></i> Confirmar mi Orden en WhatsApp
-            </Button>
-          </div>
-
-        )}
-
+        {/* Eliminamos el bloque de orderConfirmed y el botón secundario de WhatsApp */}
       </Form>
-
     </div>
   );
 };

@@ -1,12 +1,35 @@
-import React, { useState, createContext } from "react";
+import React, { useState, createContext, useEffect } from "react"; // Importa useEffect
 
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState([]);
+  // Inicializa el estado del carrito.
+  // Intentamos cargar el carrito desde localStorage al inicio.
+  // Si no hay datos en localStorage o hay un error, se inicializa como un array vacío.
+  const [cart, setCart] = useState(() => {
+    try {
+      const localCart = localStorage.getItem('cart');
+      // Si hay datos en localStorage, los parseamos de JSON a un objeto JavaScript.
+      // Si no hay, o si hay un error al parsear, devolvemos un array vacío.
+      return localCart ? JSON.parse(localCart) : [];
+    } catch (error) {
+      // Captura cualquier error durante la carga (ej. JSON malformado)
+      console.error("Error al cargar el carrito desde localStorage:", error);
+      return []; // Devuelve un carrito vacío en caso de error
+    }
+  });
+
+  // Usa useEffect para guardar el carrito en localStorage cada vez que el estado 'cart' cambie.
+  // Esto asegura que los cambios se persistan automáticamente.
+  useEffect(() => {
+    try {
+      localStorage.setItem('cart', JSON.stringify(cart));
+    } catch (error) {
+      console.error("Error al guardar el carrito en localStorage:", error);
+    }
+  }, [cart]); // El efecto se ejecuta cada vez que 'cart' cambia
 
   // Función 'addItem': Agrega un producto al carrito o actualiza su cantidad si ya existe.
-  // **MODIFICACIÓN CLAVE AQUÍ**
   const addItem = (item, counter) => {
     // Busca si el producto (identificado por item.id) ya está en el carrito.
     const isInCart = cart.find((cartItem) => cartItem.item.id === item.id);
@@ -50,7 +73,11 @@ export const CartProvider = ({ children }) => {
     setCart(newItem);
   };
 
-  const clearCart = () => setCart([]);
+  const clearCart = () => {
+    setCart([]); // Limpia el estado del carrito
+    // También limpia el carrito de localStorage para que la persistencia funcione correctamente
+    localStorage.removeItem('cart');
+  };
 
   const getSubtotal = (counter, price) => {
     let result = counter * price;
@@ -70,6 +97,8 @@ export const CartProvider = ({ children }) => {
     return sumar(subtotales);
   };
 
+  // Esta función calcula la cantidad total de ítems en el carrito.
+  // Es la función que necesitas usar en tu CartWidget.
   const itemQuantity = () => {
     let q = cart.map((cartItem) => cartItem.counter);
     let result = sumar(q);
@@ -85,7 +114,7 @@ export const CartProvider = ({ children }) => {
         cart,
         getSubtotal,
         getTotal,
-        itemQuantity,
+        itemQuantity, // Asegúrate de que itemQuantity se exporte aquí
       }}
     >
       {children}
