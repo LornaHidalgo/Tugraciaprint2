@@ -18,7 +18,7 @@
   padding: 2px; /* Añade un pequeño relleno de 2 píxeles alrededor del contenido. */
   text-align: center; /* Centra horizontalmente el texto dentro del elemento. */
 }
-.info h1{
+.info h2{
   font-size: 1rem; /* Ajusta el tamaño de la letra a un valor mediano/pequeño (0.5 veces el tamaño de la fuente raíz). */
 }
 /*
@@ -131,4 +131,32 @@
  */
 .carousel-caption h3 {
   font-size: 3rem; /* Establece el tamaño de la fuente para los encabezados H3 de la leyenda. */
+}
+
+.info a {
+  color: #ffc107; /* Amarillo para el texto de los enlaces */
+  font-style: italic;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  transition: all 0.3s ease; /* Suaviza la transición del hover */
+}
+
+.info a:hover {
+  color: #ffffff; /* Color blanco al pasar el cursor */
+  transform: scale(1.05); /* Agranda ligeramente el enlace completo (texto e ícono) */
+}
+
+.info i {
+  color: #ffc107; /* Amarillo para el ícono en sí */
+  font-size: 24px; /* Tamaño uniforme */
+  font-weight: lighter; /* Líneas finas */
+  margin-right: 5px;
+  background-color: transparent;
+  transition: all 0.3s ease; /* Suaviza la transición del hover para el ícono */
+}
+
+/* Opcional: Si quieres que el ícono cambie de color y tamaño independiente del texto */
+.info i:hover {
+  color: #ffffff; /* Color blanco al pasar el cursor sobre el ícono */
+  transform: scale(1.1); /* Agranda ligeramente el ícono */
 }

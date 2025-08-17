@@ -27,12 +27,7 @@ function Item({ x }) {
         <img src={x.Image} alt="Foto de producto" />{" "}
         {/* Imagen del producto, con ruta y texto alternativo */}
       </div>
-      <div className="card__product--cta">
-        {" "}
-        {/* Contenedor para la sección de llamada a la acción (precio, etc.) */}
-        <div className="price">${x.price}</div>{" "}
-        {/* Muestra el precio del producto */}
-      </div>
+    
       <div className="flex-row">
         {" "}
         {/* Contenedor para botones en fila (Ver más y Añadir a deseos) */}
